@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class rotation : MonoBehaviour
 {
-    //public Camera mainCamera;
-    //public Vector3 mousePosition;
-
     void Start()
     {
-        //mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
         Vector3 mousePosition = Input.mousePosition;
