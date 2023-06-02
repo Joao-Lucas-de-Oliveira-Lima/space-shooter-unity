@@ -15,6 +15,7 @@ public class rotation : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         Vector2 direction = new Vector2(mousePosition.x - this.transform.position.x, mousePosition.y - this.transform.position.y);
         transform.up = direction;
+        Debug.Log(direction);
         /*
         Vector3 difference = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position).normalized;
         float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
