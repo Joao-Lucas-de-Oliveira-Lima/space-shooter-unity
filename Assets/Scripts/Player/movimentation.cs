@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class movimentation : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private new Rigidbody2D rigidbody;
     public float speed;
-
-    void Start()
+    public void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
         float xDirection = Input.GetAxisRaw("Horizontal");
         float yDirection = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(xDirection, yDirection).normalized * speed;
+        rigidbody.velocity = new Vector2(xDirection, yDirection).normalized * speed * Time.deltaTime;
+        //transform.position = Vector2.SmoothDamp(transform.position, new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized, ref velocity, smoothTime);
     }
 }

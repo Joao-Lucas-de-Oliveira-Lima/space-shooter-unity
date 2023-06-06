@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class rotation : MonoBehaviour
 {
-    public float speed;
+    public float speed = 5f;
     void Start()
     {
 
     }
     void Update()
-    {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 direction = new Vector2(mousePosition.x - this.transform.position.x, mousePosition.y - this.transform.position.y);
-        transform.up = direction;
-        /*
-        Vector3 difference = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position).normalized;
-        float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.Euler(0f, 0f, angle), speed * Time.deltaTime);
-        //Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
-        this.transform.rotation = rotation;
-        */
+    {   
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePosition - transform.position;
+        float angle = Vector2.SignedAngle(Vector2.up, direction);
+        //Smooth rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), speed * Time.deltaTime);
     }
 }
