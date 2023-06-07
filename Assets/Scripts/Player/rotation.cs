@@ -15,6 +15,6 @@ public class rotation : MonoBehaviour
         Vector2 direction = mousePosition - transform.position;
         float angle = Vector2.SignedAngle(Vector2.up, direction);
         //Smooth rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), speed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), speed * Time.fixedDeltaTime);
     }
 }

@@ -13,9 +13,7 @@ public class movimentation : MonoBehaviour
     }
     void Update()
     {
-        float xDirection = Input.GetAxisRaw("Horizontal");
-        float yDirection = Input.GetAxisRaw("Vertical");
-        rigidbody.velocity = new Vector2(xDirection, yDirection).normalized * speed * Time.deltaTime;
-        //transform.position = Vector2.SmoothDamp(transform.position, new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized, ref velocity, smoothTime);
+        Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        rigidbody.MovePosition(rigidbody.position + movement * speed * Time.fixedDeltaTime);
     }
 }
