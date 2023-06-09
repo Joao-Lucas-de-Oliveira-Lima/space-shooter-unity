@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 212396194626849566}
   - component: {fileID: 8893601359749623931}
   - component: {fileID: 1217812028811540177}
-  - component: {fileID: 3950227487474665007}
+  - component: {fileID: 5781676977868270911}
+  - component: {fileID: 5609816822430573432}
   m_Layer: 0
   m_Name: RedLaser
   m_TagString: Bullet
@@ -76,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d3abe5c405d8ae041a1c151d9ba3c2c3, type: 3}
+  m_Sprite: {fileID: 368446115, guid: 6fdc0f46ecc1fc64a8fe418fe821274a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.09, y: 0.09}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -149,7 +150,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.06}
   serializedVersion: 2
   m_Radius: 0.09424648
---- !u!114 &3950227487474665007
+--- !u!114 &5781676977868270911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,6 +159,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 1019480068096796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd76f2432857bf546bfa8a1ec66e0a5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f446fa352d673c4d88e7e3ea7886812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &5609816822430573432
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019480068096796}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.32, y: 0}
+  - {x: 0.32, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

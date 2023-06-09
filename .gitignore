@@ -76,3 +76,5 @@ crashlytics-build.properties
 
 #.meta files of unity
 *.meta
+
+/[Aa]ssets/Imports
