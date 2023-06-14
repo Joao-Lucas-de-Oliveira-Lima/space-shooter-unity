@@ -74,7 +74,4 @@ crashlytics-build.properties
 #VScode configs
 .vsconfig
 
-#.meta files of unity
-*.meta
-
 /[Aa]ssets/Imports
