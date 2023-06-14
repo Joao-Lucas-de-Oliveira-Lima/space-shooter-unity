@@ -74,4 +74,9 @@ crashlytics-build.properties
 #VScode configs
 .vsconfig
 
+<<<<<<< HEAD
 /[Aa]ssets/Imports
+=======
+#.meta files of unity
+
+>>>>>>> cenario_level_1
