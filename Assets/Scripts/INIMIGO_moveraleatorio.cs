@@ -5,7 +5,7 @@ using UnityEngine;
 public class Moveraleatorio : MonoBehaviour
 {
     public float velocidade = 3f;
-    public float limiteMovimento = 5f;
+    public float limiteMovimento = 1f;
 
     private Vector2 direcao;
 
