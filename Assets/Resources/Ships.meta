@@ -1,6 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/Ships.meta
 guid: b4a7bba5d4ad9484db5a6312cd2ed871
 folderAsset: yes
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+guid: 8070bfa3d5d004b4bae05ba4a686f4c0
+=======
+guid: 5b81ff961a65a4e44a19d837037d617a
+>>>>>>> cenario_level_1
+=======
+guid: 44f80b7b780373541ad015d2191d0ef9
+>>>>>>> cenario_level_1
+>>>>>>> f92de5da2e58ec95e57740fbb83a9ea971d9c077:Assets/Scenes/level_1.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
