@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c51d524b4bdd4aafbc523cb41f4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  somDestruir: {fileID: 0}
 --- !u!61 &5192414371939284433
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -198,6 +199,7 @@ GameObject:
   - component: {fileID: 9188292769302225721}
   - component: {fileID: 8492162421955912255}
   - component: {fileID: 821120526873850884}
+  - component: {fileID: 6038555706251362560}
   m_Layer: 6
   m_Name: canhao
   m_TagString: Untagged
@@ -285,5 +287,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5119383952214525947, guid: f06a0a244e32143448fd664eb277496c, type: 3}
+  naveJogador: {fileID: 0}
   intervaloDisparo: 0.5
   intensidade: 10
+  somDisparo: {fileID: 0}
+--- !u!58 &6038555706251362560
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7733261058549319288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -12}
+  serializedVersion: 2
+  m_Radius: 16

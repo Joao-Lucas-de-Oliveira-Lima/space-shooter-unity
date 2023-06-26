@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class COLISAOinimigoXplayer : MonoBehaviour
 {
+    public AudioSource somDestruir;
+    public GameObject explosaoPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,8 @@ public class COLISAOinimigoXplayer : MonoBehaviour
         {
             Debug.Log("acertou!!");
             Destroy(this.gameObject);
+            somDestruir.Play();
+            Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
         }
     }
 }

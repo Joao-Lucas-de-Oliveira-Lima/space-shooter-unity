@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c51d524b4bdd4aafbc523cb41f4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  somDestruir: {fileID: 0}
 --- !u!61 &4770536216114605099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -288,6 +289,7 @@ MonoBehaviour:
   prefab: {fileID: 5119383952214525947, guid: d853d63992e4f134fa4734c9ed9c8aec, type: 3}
   naveJogador: {fileID: 0}
   tempoDisparo: 1
+  somDisparo: {fileID: 0}
 --- !u!58 &1900261586062414049
 CircleCollider2D:
   m_ObjectHideFlags: 0
