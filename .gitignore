@@ -75,3 +75,4 @@ crashlytics-build.properties
 .vsconfig
 
 /[Aa]ssets/Imports
+/[Aa]ssets/imports.meta
