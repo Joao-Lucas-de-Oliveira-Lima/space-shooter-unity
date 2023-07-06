@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2141693834054045050}
   - component: {fileID: 6932852061561689529}
   - component: {fileID: 2888856536146394818}
-  - component: {fileID: 7952860146673678248}
   - component: {fileID: 4770536216114605099}
+  - component: {fileID: 438139821845369354}
   m_Layer: 6
   m_Name: ESTACIONARIO
   m_TagString: inimigo
@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 7518697465198491598}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2141693834054045050
 SpriteRenderer:
@@ -129,19 +129,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7952860146673678248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075669648302562356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899c51d524b4bdd4aafbc523cb41f4ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  somDestruir: {fileID: 0}
 --- !u!61 &4770536216114605099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,6 +174,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.93, y: 3.39}
   m_EdgeRadius: 0
+--- !u!114 &438139821845369354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075669648302562356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 816760f87b5f4bc418d86b12b4df06c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  somDestruir: {fileID: 0}
+  explosaoPrefab: {fileID: 0}
 --- !u!1 &8743458066531118119
 GameObject:
   m_ObjectHideFlags: 0

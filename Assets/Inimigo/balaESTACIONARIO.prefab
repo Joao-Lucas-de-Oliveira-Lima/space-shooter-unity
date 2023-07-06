@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7185423283382032018}
   - component: {fileID: 4986578832103734180}
   - component: {fileID: -7325800683203581150}
-  - component: {fileID: 5474587989097198252}
+  - component: {fileID: 409067283076328558}
   m_Layer: 3
   m_Name: balaESTACIONARIO
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7185423283382032018
 SpriteRenderer:
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5474587989097198252
+--- !u!114 &409067283076328558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +168,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5119383952214525947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603b48d883ca66e4795ce6f255175b6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e8674c148bb7e14ab6116d97ea0e7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

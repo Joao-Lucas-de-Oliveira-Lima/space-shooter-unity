@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 972709458452470394}
   - component: {fileID: 4711577909173242335}
-  - component: {fileID: 4706953606745463481}
   - component: {fileID: 5271855357463257748}
   - component: {fileID: 8822831183318425091}
-  - component: {fileID: 4674841548971661268}
+  - component: {fileID: 3466892415740421702}
+  - component: {fileID: 2137707198212838405}
   m_Layer: 6
   m_Name: perseguidor
   m_TagString: inimigo
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4711577909173242335
 SpriteRenderer:
@@ -88,21 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4706953606745463481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5326181764154008397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53f0e34c95b9d6149b192180ca462092, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  velocidade: 3
-  player: {fileID: 0}
 --- !u!61 &5271855357463257748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -175,7 +160,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4674841548971661268
+--- !u!114 &3466892415740421702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,7 +169,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5326181764154008397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899c51d524b4bdd4aafbc523cb41f4ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 816760f87b5f4bc418d86b12b4df06c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   somDestruir: {fileID: 0}
+  explosaoPrefab: {fileID: 0}
+--- !u!114 &2137707198212838405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5326181764154008397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51c9aa62fbf06443bf3748449f7f65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  velocidade: 3
+  player: {fileID: 0}

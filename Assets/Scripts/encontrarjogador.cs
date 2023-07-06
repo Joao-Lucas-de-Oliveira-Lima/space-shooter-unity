@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class encontrarjogador : MonoBehaviour
+public class EncontrarJogador : MonoBehaviour
 {
     public string playerTag = "Player";
     public float velocidadePerseguicao = 3f;
