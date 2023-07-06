@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class COLISAOinimigoXplayer : MonoBehaviour
+public class ColisaoInimigoXplayer : MonoBehaviour
 {
     public AudioSource somDestruir;
     public GameObject explosaoPrefab;

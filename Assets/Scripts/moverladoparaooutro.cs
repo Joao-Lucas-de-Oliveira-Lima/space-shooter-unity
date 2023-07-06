@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moverladoparaooutro : MonoBehaviour
+public class MoverLadoParaoOutro : MonoBehaviour
 {
     public float velocidade = 5f;
     public float intervaloMudancaDirecao = 2f;

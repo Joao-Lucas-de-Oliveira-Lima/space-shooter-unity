@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DispararEstacionario : MonoBehaviour
+public class Disparar_ESTACIONARIO : MonoBehaviour
 {
 
     public float velocidade = 5f;

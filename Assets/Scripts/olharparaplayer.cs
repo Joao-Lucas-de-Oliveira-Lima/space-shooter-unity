@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class olharparaplayer : MonoBehaviour
+public class OlharParaPlayer : MonoBehaviour
 {
     public string playerTag = "Player";
 
