@@ -74,5 +74,5 @@ crashlytics-build.properties
 #VScode configs
 .vsconfig
 
-/[Aa]ssets/Imports
+/[Aa]ssets/Imports/
 /[Aa]ssets/imports.meta

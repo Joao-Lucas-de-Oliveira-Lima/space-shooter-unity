@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: defd035b18e3ff948ae8f34da6032232
+<<<<<<< HEAD:Assets/Scenes/Demo_Effects.unity.meta
+guid: dc0c2b5051771594a8a122b2a6c1d3e5
+=======
+guid: 50c347e00e9993d4b93177944d3addd2
+>>>>>>> inimigo:Assets/Scenes/Inimigos.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
