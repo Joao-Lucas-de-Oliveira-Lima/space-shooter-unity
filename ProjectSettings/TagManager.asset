@@ -4,16 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - inimigo
+  - parede
   - Bullet
   - Wall
+  - EnemyTest
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CAMADA TIROS
   - Water
   - UI
-  - 
+  - CAMADA INIMIGOS
   - 
   - 
   - 

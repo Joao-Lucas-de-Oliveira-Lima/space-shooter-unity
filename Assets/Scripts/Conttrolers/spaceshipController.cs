@@ -2,29 +2,32 @@
 using UnityEngine;
 
 namespace Assets.Scripts.Conttrolers
-{
-    public enum WeaponType
-    {
-        primary,
-        missile
-    }
+{ 
     public class spaceshipController : MonoBehaviour
     {
-        public WeaponType weaponType;
-        public Weapon currentWeapon;
-        public float fireRate = 0.1F;
-        private float nextFire = 0.0F;
+        public Weapon primaryWeapon, secondaryWeapon;
+        public float nextPrimaryWeaponFire = 0.0f, nextScondaryWeaponFire = 0.0f;
+        public float primaryWeaponFireRate = 0.5f, secondaryWeaponFireRate = 0.5f;
         void Start()
         {
-            currentWeapon = gameObject.AddComponent<RedLaser>();
+            primaryWeapon = gameObject.AddComponent<RedLaser>();
+            secondaryWeapon = gameObject.AddComponent<Rocket_1>();
         }
         void Update()
         {
-            if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) && Time.time > nextFire)
+            //Shoot
+            if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) && Time.time > nextPrimaryWeaponFire)
             {
-                nextFire = Time.time + fireRate;
-                currentWeapon.shoot();
+                nextPrimaryWeaponFire = Time.time + primaryWeaponFireRate;
+                primaryWeapon.shoot();
+                audioController.playSound("RedLaserBlast");
             }
+            if(Input.GetKey(KeyCode.Mouse1) && Time.time > nextScondaryWeaponFire)
+            {
+                nextScondaryWeaponFire = Time.time + secondaryWeaponFireRate;
+                secondaryWeapon.shoot();
+            }
+            //Movimentation
         }
     }
 }
