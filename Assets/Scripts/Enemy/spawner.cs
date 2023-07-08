@@ -54,7 +54,7 @@ public class spawner : MonoBehaviour
                 }
             }
             //CreatingEnemy
-            GameObject enemy = Instantiate(Resources.Load("Ships/Enemy") as GameObject);
+            GameObject enemy = Instantiate(Resources.Load("Ships/Perseguidor") as GameObject);
             enemy.transform.localPosition = new Vector2(enemyPositionX, enemyPositionY);
         }
     }

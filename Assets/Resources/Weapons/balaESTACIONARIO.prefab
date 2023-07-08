@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7325800683203581150}
   - component: {fileID: 409067283076328558}
   m_Layer: 3
-  m_Name: balaESTACIONARIO
+  m_Name: BalaEstacionario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

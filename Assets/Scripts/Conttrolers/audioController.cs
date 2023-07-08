@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class audioController : MonoBehaviour
+public class AudioController : MonoBehaviour
 {
     public static AudioClip redLaserBlast;
     public static AudioSource audioSource;

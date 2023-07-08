@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InimigoEncontrarJogador : MonoBehaviour
+public class Perseguidor : NoForceCollision, Enemy
 {
     public string playerTag = "Player";
     public float velocidade = 3f;
@@ -43,8 +43,7 @@ public class InimigoEncontrarJogador : MonoBehaviour
             transform.up = direcao.normalized;
         }
 
-
     }
 
-
+    
 }

@@ -4,9 +4,6 @@ using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class playerBullet : MonoBehaviour
-{
-}
 
 public interface Weapon
 {
