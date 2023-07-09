@@ -8,16 +8,19 @@ TagManager:
   - parede
   - Bullet
   - Wall
-  - EnemyTest
+  - PlayerBullet
+  - EnemyBullet
+  - Enemy
+  - Door
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - CAMADA TIROS
+  - Camada Tiros dos Inimigos
   - Water
   - UI
   - CAMADA INIMIGOS
-  - 
+  - Camada Tiros do Jogador
   - 
   - 
   - 

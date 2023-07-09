@@ -172,8 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816760f87b5f4bc418d86b12b4df06c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  somDestruir: {fileID: 0}
-  explosaoPrefab: {fileID: 0}
 --- !u!114 &2187071139701093982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,5 +184,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97990e2a6b376924480848658382785a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 3
+  velocidade: 5
   limiteMovimento: 1

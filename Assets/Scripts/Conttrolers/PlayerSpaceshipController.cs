@@ -4,9 +4,9 @@ using UnityEngine.UIElements;
 
 namespace Assets.Scripts.Conttrolers
 { 
-    public class PlayerSpaceshipController : NoForceCollision
+    public class PlayerSpaceshipController : MonoBehaviour
     {
-        public Weapon primaryWeapon, secondaryWeapon;
+        public IWeapon primaryWeapon, secondaryWeapon;
         public float nextPrimaryWeaponFire = 0.0f, nextScondaryWeaponFire = 0.0f;
         public float primaryWeaponFireRate = 0.5f, secondaryWeaponFireRate = 0.5f;
 
@@ -27,13 +27,13 @@ namespace Assets.Scripts.Conttrolers
             if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) && Time.time > nextPrimaryWeaponFire)
             {
                 nextPrimaryWeaponFire = Time.time + primaryWeaponFireRate;
-                primaryWeapon.shoot();
-                AudioController.playSound("RedLaserBlast");
+                primaryWeapon.Shoot();
+                
             }
             if(Input.GetKey(KeyCode.Mouse1) && Time.time > nextScondaryWeaponFire)
             {
                 nextScondaryWeaponFire = Time.time + secondaryWeaponFireRate;
-                secondaryWeapon.shoot();
+                secondaryWeapon.Shoot();
             }
 
             //Movimentation
