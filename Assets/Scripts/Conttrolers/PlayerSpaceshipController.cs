@@ -28,7 +28,6 @@ namespace Assets.Scripts.Conttrolers
             {
                 nextPrimaryWeaponFire = Time.time + primaryWeaponFireRate;
                 primaryWeapon.Shoot();
-                
             }
             if(Input.GetKey(KeyCode.Mouse1) && Time.time > nextScondaryWeaponFire)
             {

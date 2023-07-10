@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Perseguidor : MonoBehaviour, Enemy
@@ -22,6 +23,11 @@ public class Perseguidor : MonoBehaviour, Enemy
 
     public float raioDeAlcance = 5f;
     public float anguloMaximo;
+
+
+    //Enemy life
+    public float life = 6;
+
 
     private void Start()
     {
@@ -85,6 +91,36 @@ public class Perseguidor : MonoBehaviour, Enemy
             return true;
         else
             return false;
+
+    }
+
+
+    //Colisões
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ManagerCollision(collision);
+    }
+
+
+    private void ManagerCollision(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Aqui");
+            Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+            AudioController.PlaySound("Explosion");
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            this.life -= 1;
+            if (life == 0)
+            {
+                Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+                AudioController.PlaySound("Explosion");
+                Destroy(this.gameObject);
+            }
+        }
 
     }
 }

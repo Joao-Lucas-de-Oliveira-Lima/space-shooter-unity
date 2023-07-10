@@ -21,10 +21,10 @@ public class InimigoRebate : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
         {
             // Rebate a direção ao colidir com uma parede
-            direction = Vector2.Reflect(direction, collision.contacts[0].normal);
+            direction = Vector2.Reflect(direction, collision.GetContact(0).normal);
         }
     }
 }

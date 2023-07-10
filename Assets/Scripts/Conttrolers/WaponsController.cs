@@ -13,7 +13,7 @@ public interface IWeapon
 
 public class RedLaser : MonoBehaviour, IWeapon 
 {
-    public float projectileForce = 80000f;
+    public float shotSpeed = 1000f;
     public GameObject shootingPoint;
 
     public void Start()
@@ -24,7 +24,7 @@ public class RedLaser : MonoBehaviour, IWeapon
     {
         GameObject projectile = Instantiate(Resources.Load("Weapons/RedLaser", typeof(GameObject)), shootingPoint.transform.position, shootingPoint.transform.rotation) as GameObject;
         Rigidbody2D rigidbody = projectile.GetComponent<Rigidbody2D>();
-        rigidbody.AddForce(shootingPoint.transform.up * projectileForce * Time.fixedDeltaTime);
+        rigidbody.velocity = shotSpeed * Time.deltaTime * shootingPoint.transform.up;
         AudioController.PlaySound("RedLaserBlast");
     }
 }
@@ -46,6 +46,23 @@ public class Rocket_1 : MonoBehaviour,IWeapon
     }
 }
 
+public class SniperBullet : MonoBehaviour, IWeapon
+{
+    public GameObject shootingPoint;
+    public float shotSpeed = 500f;
+    public void Start()
+    {
+        shootingPoint = transform.Find("ShootingPoint").gameObject;
+    }
+    public void Shoot()
+    {
+        GameObject projectile = Instantiate(Resources.Load("Weapons/SniperBullet") as GameObject, shootingPoint.transform.position, shootingPoint.transform.rotation);
+        Rigidbody2D rigidbody = projectile.GetComponent<Rigidbody2D>();
+        rigidbody.velocity = shotSpeed * Time.deltaTime * shootingPoint.transform.up;
+        AudioController.PlaySound("SniperBulletBlast");
+    }
+}
+
 public class BalaSimples_1 : MonoBehaviour, IWeapon
 {
     public GameObject naveJogador;
@@ -55,7 +72,7 @@ public class BalaSimples_1 : MonoBehaviour, IWeapon
     private float tempoDecorrido = 0f; // Tempo decorrido desde o último disparo
 
     public GameObject shootingPoint;
-    public float projectileForce = 65000f;
+    public float shotSpeed = 400;
 
     void Start()
     {
@@ -86,7 +103,7 @@ public class BalaSimples_1 : MonoBehaviour, IWeapon
       
         GameObject projectile = Instantiate(Resources.Load("Weapons/BalaSimples") as GameObject, shootingPoint.transform.position, shootingPoint.transform.rotation);
         Rigidbody2D rigidbody = projectile.GetComponent<Rigidbody2D>();
-        rigidbody.AddForce(this.transform.up * projectileForce * Time.deltaTime);
+        rigidbody.velocity = shotSpeed * Time.deltaTime * shootingPoint.transform.up;
         AudioController.PlaySound("SingleBulletBlast");
 
     }

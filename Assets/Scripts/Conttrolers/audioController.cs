@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-    public static AudioClip redLaserBlast, explosion, singleBulletBlast;
+    public static AudioClip redLaserBlast, explosion, singleBulletBlast, sniperBulletBlast;
     public static AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,8 @@ public class AudioController : MonoBehaviour
         explosion = Resources.Load("Audio/Explosion") as AudioClip;
 
         singleBulletBlast = Resources.Load("Audio/SingleBulletBlast") as AudioClip;
+
+        sniperBulletBlast = Resources.Load("Audio/SniperBulletBlast") as AudioClip;
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -29,6 +31,9 @@ public class AudioController : MonoBehaviour
                 break;
             case "SingleBulletBlast":
                 audioSource.PlayOneShot(singleBulletBlast);
+                break;
+            case "SniperBulletBlast":
+                audioSource.PlayOneShot(sniperBulletBlast);
                 break;
         }
     }

@@ -49,3 +49,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Thruster
+    uniqueID: 2358291885
+    locked: 0
+  - name: Main
+    uniqueID: 851550983
+    locked: 0
