@@ -26,7 +26,7 @@ public class Perseguidor : MonoBehaviour, Enemy
 
 
     //Enemy life
-    public float life = 6;
+    public float life = 10;
 
 
     private void Start()

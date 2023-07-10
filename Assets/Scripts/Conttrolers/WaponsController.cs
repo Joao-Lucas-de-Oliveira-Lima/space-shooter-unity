@@ -63,6 +63,23 @@ public class SniperBullet : MonoBehaviour, IWeapon
     }
 }
 
+public class CannonBullet : MonoBehaviour, IWeapon
+{
+    public GameObject shootingPoint;
+    public float shotSpeed = 400f;
+    public void Start()
+    {
+        shootingPoint = transform.Find("ShootingPoint").gameObject;
+    }
+    public void Shoot()
+    {
+        GameObject projectile = Instantiate(Resources.Load("Weapons/CannonBullet") as GameObject, shootingPoint.transform.position, shootingPoint.transform.rotation);
+        Rigidbody2D rigidbody = projectile.GetComponent<Rigidbody2D>();
+        rigidbody.velocity = shotSpeed * Time.deltaTime * shootingPoint.transform.up;
+        AudioController.PlaySound("CannonBulletBlast");
+    }
+}
+
 public class BalaSimples_1 : MonoBehaviour, IWeapon
 {
     public GameObject naveJogador;
