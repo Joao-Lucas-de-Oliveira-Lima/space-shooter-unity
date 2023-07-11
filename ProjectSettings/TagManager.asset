@@ -18,6 +18,7 @@ TagManager:
   - ThirdRoom
   - FourthRoom
   - FifthRoom
+  - BarsController
   layers:
   - Default
   - TransparentFX

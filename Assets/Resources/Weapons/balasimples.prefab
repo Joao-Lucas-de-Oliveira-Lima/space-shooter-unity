@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 8893601359749623931}
   - component: {fileID: 1217812028811540177}
   - component: {fileID: 5458722330409329500}
+  - component: {fileID: 5282340118013629667}
   m_Layer: 3
-  m_Name: BalaSimples
+  m_Name: balasimples
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &212396194626849566
 SpriteRenderer:
@@ -161,3 +162,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c0a15c20af7a5448f79e0177d2b752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5282340118013629667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019480068096796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819a9325a4295d9449f8c4feeb266f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDamage: 40

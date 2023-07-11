@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6331592932209853471}
   - component: {fileID: 430451864451321516}
   - component: {fileID: 6849166809194700498}
+  - component: {fileID: 8518261920272036702}
   m_Layer: 7
   m_Name: SniperBullet
   m_TagString: EnemyBullet
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6366440858707120788
 SpriteRenderer:
@@ -171,3 +172,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9f160d6643f3f43b33ff704257c119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8518261920272036702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5230427200707025536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819a9325a4295d9449f8c4feeb266f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDamage: 60
