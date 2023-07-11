@@ -27,6 +27,7 @@ public class PlayerSpawnController : MonoBehaviour
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        this.CurrentSpawnPointOfThePlayer = GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom;
         if (player == null)
         {
             spawnPoint = VerifySpawnPoint();
@@ -43,6 +44,22 @@ public class PlayerSpawnController : MonoBehaviour
         if (this.CurrentSpawnPointOfThePlayer == 1)
         {
             return this.transform.Find("PlayerOneSpawnPoint").gameObject;
+        }
+        else if (this.CurrentSpawnPointOfThePlayer == 2)
+        {
+            return this.transform.Find("PlayerTwoSpawnPoint").gameObject;
+        }
+        else if (this.CurrentSpawnPointOfThePlayer == 3)
+        {
+            return this.transform.Find("PlayerThreeSpawnPoint").gameObject;
+        }
+        else if (this.CurrentSpawnPointOfThePlayer == 4)
+        {
+            return this.transform.Find("PlayerFourSpawnPoint").gameObject;
+        }
+        else if (this.CurrentSpawnPointOfThePlayer == 5)
+        {
+            return this.transform.Find("PlayerFiveSpawnPoint").gameObject;
         }
         return this.transform.Find("PlayerOneSpawnPoint").gameObject;
     }

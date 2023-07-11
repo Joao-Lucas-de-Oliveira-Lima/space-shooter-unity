@@ -121,6 +121,21 @@ public class Perseguidor : MonoBehaviour, Enemy
                 if(currentRoom == 1)
                 {
                     GameObject.FindGameObjectWithTag("FirstRoom").GetComponent<RoomController>().EnemyDefeated();
+                }else if(currentRoom == 2)
+                {
+                    GameObject.FindGameObjectWithTag("SecondRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 3)
+                {
+                    GameObject.FindGameObjectWithTag("ThirdRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 4)
+                {
+                    GameObject.FindGameObjectWithTag("FourthRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 5)
+                {
+                    GameObject.FindGameObjectWithTag("FifthRoom").GetComponent<RoomController>().EnemyDefeated();
                 }
                 Destroy(this.gameObject);
             }
