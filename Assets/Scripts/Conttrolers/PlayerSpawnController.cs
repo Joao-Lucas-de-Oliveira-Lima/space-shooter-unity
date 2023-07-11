@@ -15,7 +15,8 @@ public class PlayerSpawnController : MonoBehaviour
         {
             spawnPoint = VerifySpawnPoint();
             player = Instantiate(Resources.Load("Ships/Player") as GameObject, this.spawnPoint.transform.position, this.spawnPoint.transform.rotation);
-            player.GetComponent<PlayerStatus>().barsControllers = gameObject.AddComponent<BarsController>();
+            // player.GetComponent<PlayerStateController>().barsControllers = gameObject.AddComponent<BarsController>();
+            player.GetComponent<PlayerStateController>().barsControllers = GameObject.Find("Bars").GetComponent<BarsController>();
             player.tag = "Player";
             //Destroy(GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowThePlayer>());
             //GameObject.FindGameObjectWithTag("MainCamera").AddComponent<FollowThePlayer>();
@@ -31,7 +32,7 @@ public class PlayerSpawnController : MonoBehaviour
         {
             spawnPoint = VerifySpawnPoint();
             player = Instantiate(Resources.Load("Ships/Player") as GameObject, this.spawnPoint.transform.position, this.spawnPoint.transform.rotation);
-            player.GetComponent<PlayerStatus>().barsControllers = gameObject.AddComponent<BarsController>();
+            player.GetComponent<PlayerStateController>().barsControllers = gameObject.AddComponent<BarsController>();
             player.tag = "Player";
             //Destroy(GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowThePlayer>());
             //FindGameObjectWithTag("MainCamera").AddComponent<FollowThePlayer>();
