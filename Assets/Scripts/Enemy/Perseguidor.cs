@@ -26,7 +26,7 @@ public class Perseguidor : MonoBehaviour, Enemy
 
 
     //Enemy life
-    public float life = 10;
+    public float life = 10f;
 
 
     private void Start()
@@ -104,13 +104,7 @@ public class Perseguidor : MonoBehaviour, Enemy
 
     private void ManagerCollision(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
-            AudioController.PlaySound("Explosion");
-            Destroy(this.gameObject);
-        }
-        else if (collision.gameObject.CompareTag("PlayerBullet"))
+        if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             this.life -= 1;
             if (life == 0)

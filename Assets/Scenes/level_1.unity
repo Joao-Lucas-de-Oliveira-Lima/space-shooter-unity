@@ -27812,6 +27812,9 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 5326181764154008397, guid: 176676b5cb922a64da52d256d13ceb3b, type: 3}
     enemyCount: 1
     maxEnemiesPerWave: 1
+  - enemyPrefab: {fileID: 2841857169381808094, guid: 4bc83d863c13acf4d8c697be8ca9b990, type: 3}
+    enemyCount: 2
+    maxEnemiesPerWave: 2
   spawnPoints:
   - {fileID: 164715371}
   - {fileID: 1638398241}

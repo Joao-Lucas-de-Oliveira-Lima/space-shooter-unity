@@ -53,6 +53,14 @@ namespace Assets.Scripts.Conttrolers
         }
 
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Colidiu com a nave inimiga");
+            }
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             ManagerCollision(collision);
@@ -62,7 +70,6 @@ namespace Assets.Scripts.Conttrolers
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-
                 Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
                 AudioController.PlaySound("Explosion");
                 Destroy(this.gameObject);

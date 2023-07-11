@@ -2,88 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scout : MonoBehaviour
+public class Patrol : MonoBehaviour
 {
-    public float velocidade;
-    public float tempoImunidade;
-    private Vector3 direcao;
-    private bool mudarDirecao;
-    private Vector3 novaDirecao;
-    private bool emImunidade;
+    public float speed = 5f; // Velocidade de movimento da nave
+
     private Rigidbody2D rb;
+    private bool isMovingRight = true;
+    private bool isMovingDown = false;
 
+    public float life = 20f;
 
-    //Enemy life
-    public float life = 6f;
-
-
-    void Start()
+    private void Start()
     {
-        direcao = Vector3.right; // Inicia movendo para a direita
-        mudarDirecao = false;
-        emImunidade = false;
-        GerarNovaDirecao();
-
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (mudarDirecao)
+        if (isMovingRight)
         {
-            // Muda a direção para a nova direção aleatória
-            direcao = novaDirecao;
-            mudarDirecao = false;
-
-            // Gera uma nova direção aleatória após um intervalo de tempo
-            Invoke("GerarNovaDirecao", Random.Range(1f, 3f));
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
         }
 
-        if (!emImunidade)
+        // Verifica a colisão com a parede
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
+        if (hit.collider != null)
         {
-            // Calcula a velocidade desejada com base na velocidade e direção
-            Vector2 velocidadeDesejada = direcao * velocidade;
-
-            // Define a velocidade do Rigidbody2D
-            rb.velocity = velocidadeDesejada;
+            // Se houver uma parede abaixo, inverte a direção vertical
+            if (!isMovingDown)
+            {
+                isMovingDown = true;
+                transform.position += new Vector3(0f, -1f, 0f);
+            }
+            else
+            {
+                isMovingDown = false;
+                transform.position += new Vector3(0f, 1f, 0f);
+            }
         }
-    }
-
-    public void MudarDirecao()
-    {
-        if (!emImunidade)
-        {
-            // Muda a direção para o sentido oposto
-            direcao *= -1;
-            mudarDirecao = true;
-
-            // Ativa o tempo de imunidade a colisões
-            emImunidade = true;
-            Invoke("DesativarImunidade", tempoImunidade);
-        }
-    }
-
-    private void GerarNovaDirecao()
-    {
-        // Gera uma nova direção aleatória
-        float direcaoX = Random.Range(-1f, 1f);
-        float direcaoY = Random.Range(-1f, 1f);
-        novaDirecao = new Vector3(direcaoX, direcaoY, 0f).normalized;
-        mudarDirecao = true;
-    }
-
-    private void DesativarImunidade()
-    {
-        emImunidade = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        MudarDirecao();
+        // Verifica a colisão com a parede lateral
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isMovingRight = !isMovingRight;
+        }
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+private void OnTriggerEnter2D(Collider2D collision)
     {
         ManagerCollision(collision);
     }
@@ -91,7 +63,7 @@ public class Scout : MonoBehaviour
 
     private void ManagerCollision(Collider2D collision)
     {
-      
+
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             this.life -= 1;
