@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Patrol : MonoBehaviour
@@ -12,54 +13,24 @@ public class Patrol : MonoBehaviour
 
     public float life = 20f;
 
+    private int direction; // Direção atual da nave (-1 para esquerda, 1 para direita)
+
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        // Escolhe aleatoriamente a direção inicial da nave
+        direction = Random.Range(0, 2) == 0 ? -1 : 1;
     }
 
     private void Update()
     {
-        if (isMovingRight)
-        {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
-        }
-        else
-        {
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
-        }
-
-        // Verifica a colisão com a parede
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
-        if (hit.collider != null)
-        {
-            // Se houver uma parede abaixo, inverte a direção vertical
-            if (!isMovingDown)
-            {
-                isMovingDown = true;
-                transform.position += new Vector3(0f, -1f, 0f);
-            }
-            else
-            {
-                isMovingDown = false;
-                transform.position += new Vector3(0f, 1f, 0f);
-            }
-        }
+        // Move a nave na direção horizontal
+        transform.Translate(Vector2.right * speed * direction * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Verifica a colisão com a parede lateral
-        if (collision.gameObject.CompareTag("Wall"))
+    private void OnTriggerEnter2D(Collider2D collision)
         {
-            isMovingRight = !isMovingRight;
+            ManagerCollision(collision);
         }
-    }
-
-private void OnTriggerEnter2D(Collider2D collision)
-    {
-        ManagerCollision(collision);
-    }
-
 
     private void ManagerCollision(Collider2D collision)
     {
@@ -97,4 +68,5 @@ private void OnTriggerEnter2D(Collider2D collision)
         }
 
     }
+
 }

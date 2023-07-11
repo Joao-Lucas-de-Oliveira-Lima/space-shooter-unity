@@ -499,7 +499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164715370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.9, y: 5.97, z: 0.06753465}
+  m_LocalPosition: {x: -6.68, y: 5.53, z: 0.06753465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3674,7 +3674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178012238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.12, y: -2.49, z: 0.06753465}
+  m_LocalPosition: {x: 8.35, y: -2.49, z: 0.06753465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27813,8 +27813,8 @@ MonoBehaviour:
     enemyCount: 1
     maxEnemiesPerWave: 1
   - enemyPrefab: {fileID: 2841857169381808094, guid: 4bc83d863c13acf4d8c697be8ca9b990, type: 3}
-    enemyCount: 2
-    maxEnemiesPerWave: 2
+    enemyCount: 1
+    maxEnemiesPerWave: 1
   spawnPoints:
   - {fileID: 164715371}
   - {fileID: 1638398241}
@@ -49972,7 +49972,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638398240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.46, y: 5.28, z: 0.06753465}
+  m_LocalPosition: {x: 7.36, y: 5.28, z: 0.06753465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50452,7 +50452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819301947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.06, y: -2.7, z: 0.06753465}
+  m_LocalPosition: {x: -9.02, y: -2.7, z: 0.06753465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
