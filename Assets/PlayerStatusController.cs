@@ -75,25 +75,6 @@ public class PlayerStateController : MonoBehaviour
 
     private void Update()
     {
-        // Exemplo de como você pode usar os valores
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Diminui a vida, energia e escudos em 100
-            Life -= 100;
-            Energy -= 100;
-            Shield -= 100;
-
-            Debug.Log("Life: " + Life);
-            Debug.Log("Energy: " + Energy);
-            Debug.Log("Shield: " + Shield);
-
-            // Reinicia o timer de recuperação
-            recoverTimer = recoverTime;
-            updateLifeUI();
-            updateEnergyUI();
-            updateShieldUI();
-        }
-
         // Lógica de recuperação do escudo
         RecoverUpdate(Time.deltaTime);
     }
@@ -137,7 +118,7 @@ public class PlayerStateController : MonoBehaviour
         }
 
         updateShieldUI();
-        updateEnergyUI();
+        updateLifeUI();
 
         // Reinicia o timer de recuperação ao receber dano
         recoverTimer = recoverTime;
