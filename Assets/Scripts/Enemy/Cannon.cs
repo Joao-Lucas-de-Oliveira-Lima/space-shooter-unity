@@ -30,22 +30,22 @@ public class Cannon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        jogador = GameObject.FindGameObjectWithTag(playerTag);
         this.primaryWeapon = gameObject.AddComponent<CannonBullet>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        jogador = GameObject.FindGameObjectWithTag(playerTag);
         if (jogador != null)
         {
             direcao = jogador.transform.position - transform.position;
             transform.up = direcao.normalized;
-        }
-        if (Time.time > nextFire && VerifyAttackRadius())
-        {
-            nextFire = Time.time + fireRate;
-            primaryWeapon.Shoot();
+            if (Time.time > nextFire && VerifyAttackRadius())
+            {
+                nextFire = Time.time + fireRate;
+                primaryWeapon.Shoot();
+            }
         }
     }
 

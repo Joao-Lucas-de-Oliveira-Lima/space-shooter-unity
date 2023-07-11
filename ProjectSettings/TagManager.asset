@@ -12,6 +12,9 @@ TagManager:
   - EnemyBullet
   - Enemy
   - Door
+  - FirstRoom
+  - CurrentRoom
+  - SecondRoom
   layers:
   - Default
   - TransparentFX

@@ -16,11 +16,12 @@ public class RedLaserCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             
-            Instantiate(Resources.Load("Effects/RedLaserImpactExplosionAnimation") as GameObject, collision.gameObject.transform.position, Quaternion.identity);
+            Instantiate(Resources.Load("Effects/RedLaserImpactExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
         {
+            Instantiate(Resources.Load("Effects/RedLaserImpactExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

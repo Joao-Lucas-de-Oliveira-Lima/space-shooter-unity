@@ -31,8 +31,6 @@ public class Perseguidor : MonoBehaviour, Enemy
 
     private void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag(playerTag);
-        jogador = GameObject.FindGameObjectWithTag(playerTag);
 
         //OBSERVAÇÃO: eu não sei pq, mas o código para olhar para a direção do jogador só funcinou depois q eu fiz uma segunda variável
         //para achar a tag player (declarando private GameObject lá em cima).
@@ -42,16 +40,19 @@ public class Perseguidor : MonoBehaviour, Enemy
         //é para que a nave sempre olhe para o jogador. Não entendi pq não deu certo fazer com um único GameObject.
         //Talvez o código pudesse ser mais consiso, mas de qualquer forma, do jeito que está, está funcionando!
 
-        if (player != null)
-        {
-            playerTransform = player.transform;            
-        }
-
         this.primaryWeapon = gameObject.AddComponent<BalaSimples_1>();
     }
 
     void Update()
     {
+        GameObject player = GameObject.FindGameObjectWithTag(playerTag);
+        jogador = GameObject.FindGameObjectWithTag(playerTag);
+
+        if (player != null)
+        {
+            playerTransform = player.transform;
+        }
+
         if (playerTransform != null)
         {
             float distance = Vector2.Distance(this.transform.position, playerTransform.position);
@@ -64,13 +65,12 @@ public class Perseguidor : MonoBehaviour, Enemy
         {
             direcao = jogador.transform.position - transform.position;
             transform.up = direcao.normalized;
-        }
-
-        //Shooting
-        if (Time.time > nextFire && VerifyDistance() && VerifyAttackRadius())
-        {
-            nextFire = Time.time + fireRate;
-            primaryWeapon.Shoot();
+            //Shooting
+            if (Time.time > nextFire && VerifyDistance() && VerifyAttackRadius())
+            {
+                nextFire = Time.time + fireRate;
+                primaryWeapon.Shoot();
+            }
         }
     }
 
@@ -106,7 +106,6 @@ public class Perseguidor : MonoBehaviour, Enemy
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Aqui");
             Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
             AudioController.PlaySound("Explosion");
             Destroy(this.gameObject);
@@ -118,6 +117,11 @@ public class Perseguidor : MonoBehaviour, Enemy
             {
                 Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
                 AudioController.PlaySound("Explosion");
+                int currentRoom = GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom;
+                if(currentRoom == 1)
+                {
+                    GameObject.FindGameObjectWithTag("FirstRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
                 Destroy(this.gameObject);
             }
         }

@@ -8,6 +8,7 @@ public class InimigoRebate : MonoBehaviour
     private Vector2 direction;
     public float velocidade = 5f;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();

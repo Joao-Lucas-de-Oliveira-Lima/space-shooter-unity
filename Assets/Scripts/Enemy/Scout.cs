@@ -12,6 +12,11 @@ public class Scout : MonoBehaviour
     private bool emImunidade;
     private Rigidbody2D rb;
 
+
+    //Enemy life
+    public float life = 10;
+
+
     void Start()
     {
         direcao = Vector3.right; // Inicia movendo para a direita
@@ -75,5 +80,28 @@ public class Scout : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         MudarDirecao();
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ManagerCollision(collision);
+    }
+
+
+    private void ManagerCollision(Collider2D collision)
+    {
+      
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            this.life -= 1;
+            if (life == 0)
+            {
+                Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+                AudioController.PlaySound("Explosion");
+                Destroy(this.gameObject);
+            }
+        }
+
     }
 }

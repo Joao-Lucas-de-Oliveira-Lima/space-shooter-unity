@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 namespace Assets.Scripts.Conttrolers
 { 
-    public class PlayerSpaceshipController : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         public IWeapon primaryWeapon, secondaryWeapon;
         public float nextPrimaryWeaponFire = 0.0f, nextScondaryWeaponFire = 0.0f;
@@ -15,6 +15,8 @@ namespace Assets.Scripts.Conttrolers
         public float velocity = 5f;
 
         public float speed = 5f;
+
+        public int playerLives = 3;
 
         void Start()
         {
@@ -50,5 +52,27 @@ namespace Assets.Scripts.Conttrolers
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), speed * Time.fixedDeltaTime);
         }
 
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            ManagerCollision(collision);
+        }
+
+        private void ManagerCollision(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+
+                Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+                AudioController.PlaySound("Explosion");
+                Destroy(this.gameObject);
+            }
+            else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
+            {
+                
+            }
+        }
+
     }
+
 }

@@ -29,9 +29,6 @@ public class Sniper : MonoBehaviour, Enemy
 
     private void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag(playerTag);
-        jogador = GameObject.FindGameObjectWithTag(playerTag);
-
         //OBSERVAÇÃO: eu não sei pq, mas o código para olhar para a direção do jogador só funcinou depois q eu fiz uma segunda variável
         //para achar a tag player (declarando private GameObject lá em cima).
         //Eu tentei fazer tudo uma coisa só, mas apenas a parte da perseguição funcionava, a de olhar para o player, não.
@@ -40,16 +37,17 @@ public class Sniper : MonoBehaviour, Enemy
         //é para que a nave sempre olhe para o jogador. Não entendi pq não deu certo fazer com um único GameObject.
         //Talvez o código pudesse ser mais consiso, mas de qualquer forma, do jeito que está, está funcionando!
 
-        if (player != null)
-        {
-            playerTransform = player.transform;
-        }
-
         this.primaryWeapon = gameObject.AddComponent<SniperBullet>();
     }
 
     void Update()
     {
+        GameObject player = GameObject.FindGameObjectWithTag(playerTag);
+        jogador = GameObject.FindGameObjectWithTag(playerTag);
+        if (player != null)
+        {
+            playerTransform = player.transform;
+        }
         if (playerTransform != null)
         {
             float distance = Vector2.Distance(this.transform.position, playerTransform.position);
@@ -62,13 +60,12 @@ public class Sniper : MonoBehaviour, Enemy
         {
             direcao = jogador.transform.position - transform.position;
             transform.up = direcao.normalized;
-        }
-
-        //Shooting
-        if (Time.time > nextFire && VerifyDistance() && VerifyAttackRadius())
-        {
-            nextFire = Time.time + fireRate;
-            primaryWeapon.Shoot();
+            //Shooting
+            if (Time.time > nextFire && VerifyDistance() && VerifyAttackRadius())
+            {
+                nextFire = Time.time + fireRate;
+                primaryWeapon.Shoot();
+            }
         }
     }
 
