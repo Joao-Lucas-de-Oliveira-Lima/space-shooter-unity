@@ -21,17 +21,25 @@ public class RoomController : MonoBehaviour
 
     public int currentWave = 0;
 
+    public bool startWave;
+
     void Start()
     {
-        SpawnWave();
+        if (startWave)
+        {
+            SpawnWave();
+        }
     }
 
     private void Update()
     {
-        if (remainingEnemies == 0 && currentWave < waveCount)
+        if (startWave)
         {
-            currentWave++;
-            SpawnWave();
+            if (remainingEnemies == 0 && currentWave < waveCount)
+            {
+                currentWave++;
+                SpawnWave();
+            }
         }
     }
 

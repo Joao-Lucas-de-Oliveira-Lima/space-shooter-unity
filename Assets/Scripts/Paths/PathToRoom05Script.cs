@@ -1,36 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PathToRoom02Script : MonoBehaviour
+public class PathToRoom05Script : MonoBehaviour
 {
     //public GameObject door;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+
         try
         {
             GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().ToggleTilemap(true);
-            GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().room = GameObject.FindGameObjectWithTag("SecondRoom");
-            GameObject.FindGameObjectWithTag("SecondRoom").GetComponent<RoomController>().startWave = true;
-            GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom = 2;
+            GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().room = GameObject.FindGameObjectWithTag("FifthRoom");
+            GameObject.FindGameObjectWithTag("FifthRoom").GetComponent<RoomController>().startWave = true;
+            GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom = 5;
             Destroy(this.gameObject);
-        }catch(System.Exception e)
+        }
+        catch (System.Exception e)
         {
             Debug.Log(e.ToString());
         }
-               
+
     }
 }

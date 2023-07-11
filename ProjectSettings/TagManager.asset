@@ -15,6 +15,9 @@ TagManager:
   - FirstRoom
   - CurrentRoom
   - SecondRoom
+  - ThirdRoom
+  - FourthRoom
+  - FifthRoom
   layers:
   - Default
   - TransparentFX
