@@ -19,6 +19,8 @@ TagManager:
   - FourthRoom
   - FifthRoom
   - BarsController
+  - PlayerRocket
+  - RocketExplosion
   layers:
   - Default
   - TransparentFX

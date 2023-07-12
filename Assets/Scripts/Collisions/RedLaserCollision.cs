@@ -17,11 +17,13 @@ public class RedLaserCollision : MonoBehaviour
         {
             
             Instantiate(Resources.Load("Effects/RedLaserImpactExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+            //AudioController.PlaySound("BulletHit");
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
         {
             Instantiate(Resources.Load("Effects/RedLaserImpactExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+            //AudioController.PlaySound("BulletHit");
             Destroy(this.gameObject);
         }
     }

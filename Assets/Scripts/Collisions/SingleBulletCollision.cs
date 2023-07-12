@@ -19,6 +19,7 @@ public class SingleBulletCollision : MonoBehaviour
             Destroy(this.gameObject);
         }else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
         {
+            Instantiate(Resources.Load("Effects/SingleBulletImpactExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

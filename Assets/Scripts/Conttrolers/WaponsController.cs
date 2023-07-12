@@ -32,17 +32,22 @@ public class RedLaser : MonoBehaviour, IWeapon
 public class Rocket_1 : MonoBehaviour,IWeapon
 {
     public GameObject shootingPoint;
-    public float projectileForce = 50000f;
+    public float shotSpeed = 800f;
+
+    public int totalShots = 3;
+
     public void Start()
     {
-        shootingPoint = GameObject.Find("ShootingPoint");
-       
+        shootingPoint = transform.Find("ShootingPoint").gameObject;
+
     }
     public void Shoot()
     {
-        GameObject projectile = Instantiate(Resources.Load("Weapons/Rocket_1") as GameObject, shootingPoint.transform.position, shootingPoint.transform.rotation);
+        GameObject projectile = Instantiate(Resources.Load("Weapons/Rocket_1", typeof(GameObject)), shootingPoint.transform.position, shootingPoint.transform.rotation) as GameObject;
         Rigidbody2D rigidbody = projectile.GetComponent<Rigidbody2D>();
-        rigidbody.AddForce(shootingPoint.transform.up * projectileForce * Time.fixedDeltaTime);
+        rigidbody.velocity = shotSpeed * Time.deltaTime * shootingPoint.transform.up;
+        AudioController.PlaySound("RocketBlast");
+
     }
 }
 

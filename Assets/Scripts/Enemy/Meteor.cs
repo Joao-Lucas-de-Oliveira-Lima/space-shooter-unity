@@ -101,6 +101,40 @@ public class Meteor : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        else if (collision.gameObject.CompareTag("RocketExplosion"))
+        {
+            Debug.Log("Explosão");
+            this.life -= 40;
+            if (life <= 0)
+            {
+                Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+                AudioController.PlaySound("Explosion");
+                int currentRoom = GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom;
+                if (currentRoom == 1)
+                {
+                    GameObject.FindGameObjectWithTag("FirstRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 2)
+                {
+                    GameObject.FindGameObjectWithTag("SecondRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 3)
+                {
+                    GameObject.FindGameObjectWithTag("ThirdRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 4)
+                {
+                    GameObject.FindGameObjectWithTag("FourthRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 5)
+                {
+                    GameObject.FindGameObjectWithTag("FifthRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                //collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                Destroy(this.gameObject);
+            }
+
+        }
 
     }
 

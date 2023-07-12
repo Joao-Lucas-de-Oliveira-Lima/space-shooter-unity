@@ -277,7 +277,7 @@ MonoBehaviour:
   nextPrimaryWeaponFire: 0
   nextScondaryWeaponFire: 0
   primaryWeaponFireRate: 0.15
-  secondaryWeaponFireRate: 0.25
+  secondaryWeaponFireRate: 0.6
   directionToBeMoved: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
   velocity: 4
@@ -321,6 +321,8 @@ MonoBehaviour:
   recoverTime: 3
   recoverDelay: 1
   shieldIncreasePerDelay: 50
+  delayScene: 1
+  defeatedPlayer: 0
 --- !u!1001 &275534244292481010
 PrefabInstance:
   m_ObjectHideFlags: 0
