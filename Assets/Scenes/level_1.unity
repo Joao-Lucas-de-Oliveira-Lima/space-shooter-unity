@@ -326,9 +326,6 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 5326181764154008397, guid: 176676b5cb922a64da52d256d13ceb3b, type: 3}
     enemyCount: 1
     maxEnemiesPerWave: 1
-  - enemyPrefab: {fileID: 8133979800088811558, guid: c1ce85cb2cf067b4b854b8b5bdf72757, type: 3}
-    enemyCount: 1
-    maxEnemiesPerWave: 1
   spawnPoints:
   - {fileID: 2143781876}
   waveCount: 3
@@ -27180,6 +27177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1688d72f14d73584fb8780fc779b0d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWave: -1
+  totalWaves: -2
+  delay: 1
 --- !u!1 &831434385
 GameObject:
   m_ObjectHideFlags: 0
@@ -27815,8 +27815,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypes:
   - enemyPrefab: {fileID: 5326181764154008397, guid: 176676b5cb922a64da52d256d13ceb3b, type: 3}
-    enemyCount: 4
-    maxEnemiesPerWave: 4
+    enemyCount: 1
+    maxEnemiesPerWave: 1
   spawnPoints:
   - {fileID: 164715371}
   - {fileID: 1638398241}
@@ -27859,6 +27859,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 54606423}
   m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1208182200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1208182201}
+  m_Layer: 0
+  m_Name: GameCompletedController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1208182201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208182200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 386.28726, y: 151.73032, z: -0.83215076}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1278701613
 GameObject:
