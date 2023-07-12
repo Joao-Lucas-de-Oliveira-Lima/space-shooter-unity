@@ -29,6 +29,37 @@ public class Meteor : MonoBehaviour
             // Rebate a direção ao colidir com uma parede
             direction = Vector2.Reflect(direction, collision.GetContact(0).normal);
         }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            this.life = 0;
+
+            Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+            AudioController.PlaySound("Explosion");
+
+            int currentRoom = GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom;
+            if (currentRoom == 1)
+            {
+                GameObject.FindGameObjectWithTag("FirstRoom").GetComponent<RoomController>().EnemyDefeated();
+            }
+            else if (currentRoom == 2)
+            {
+                GameObject.FindGameObjectWithTag("SecondRoom").GetComponent<RoomController>().EnemyDefeated();
+            }
+            else if (currentRoom == 3)
+            {
+                GameObject.FindGameObjectWithTag("ThirdRoom").GetComponent<RoomController>().EnemyDefeated();
+            }
+            else if (currentRoom == 4)
+            {
+                GameObject.FindGameObjectWithTag("FourthRoom").GetComponent<RoomController>().EnemyDefeated();
+            }
+            else if (currentRoom == 5)
+            {
+                GameObject.FindGameObjectWithTag("FifthRoom").GetComponent<RoomController>().EnemyDefeated();
+            }
+
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -72,4 +103,5 @@ public class Meteor : MonoBehaviour
         }
 
     }
+
 }

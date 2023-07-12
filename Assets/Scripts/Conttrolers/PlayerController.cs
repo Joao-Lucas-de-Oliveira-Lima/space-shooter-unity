@@ -61,6 +61,7 @@ namespace Assets.Scripts.Conttrolers
             }
         }
         
+        */
         private void OnCollisionEnter2D(Collision2D collision)
         {
             ManagerCollision(collision);
@@ -71,16 +72,17 @@ namespace Assets.Scripts.Conttrolers
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
-                AudioController.PlaySound("Explosion");
-                Destroy(this.gameObject);
+
+                this.gameObject.GetComponent<PlayerStateController>().takeDamage(300);
+
+                //Destroy(this.gameObject);
             }
             else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
             {
                 
             }
         }
-        */
+        
 
     }
 

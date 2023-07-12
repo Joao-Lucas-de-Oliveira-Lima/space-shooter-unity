@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStateController : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class PlayerStateController : MonoBehaviour
     private int shield;
     private float recoverTimer;
     private float delayTimer;
+
+    public float delayScene = 1.0f;
+    public bool defeatedPlayer = false;
 
     // Propriedades públicas para acesso aos valores
     public int Life
@@ -115,6 +120,19 @@ public class PlayerStateController : MonoBehaviour
         else
         {
             Life -= damage;
+            if( Life <= 0 && !defeatedPlayer)
+            {
+                defeatedPlayer = true;
+                if (defeatedPlayer)
+                {
+                    Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+                    AudioController.PlaySound("Explosion");
+                    Destroy(this.gameObject);
+                    StartCoroutine(ChangeSceneWithDelay(delayScene));
+                }
+                
+                
+            }
         }
 
         updateShieldUI();
@@ -122,6 +140,11 @@ public class PlayerStateController : MonoBehaviour
 
         // Reinicia o timer de recuperação ao receber dano
         recoverTimer = recoverTime;
+    }
+    IEnumerator ChangeSceneWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("GameOver"); // Substitua "NomeDaCena" pelo nome da cena que você deseja carregar
     }
 }
 

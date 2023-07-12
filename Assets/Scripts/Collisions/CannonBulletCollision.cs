@@ -19,6 +19,7 @@ public class CannonBulletCollision : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
         {
+            Instantiate(Resources.Load("Effects/CannonBulletImpactExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

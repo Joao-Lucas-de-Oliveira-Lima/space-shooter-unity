@@ -21,12 +21,15 @@ public class PathToRoom02Script : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         try
-        {
-            GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().ToggleTilemap(true);
-            GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().room = GameObject.FindGameObjectWithTag("SecondRoom");
-            GameObject.FindGameObjectWithTag("SecondRoom").GetComponent<RoomController>().startWave = true;
-            GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom = 2;
-            Destroy(this.gameObject);
+        {   if(collision.gameObject.CompareTag("Player"))
+            {
+                GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().ToggleTilemap(true);
+                GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().room = GameObject.FindGameObjectWithTag("SecondRoom");
+                GameObject.FindGameObjectWithTag("SecondRoom").GetComponent<RoomController>().startWave = true;
+                GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom = 2;
+                Destroy(this.gameObject);
+            }
+            
         }catch(System.Exception e)
         {
             Debug.Log(e.ToString());

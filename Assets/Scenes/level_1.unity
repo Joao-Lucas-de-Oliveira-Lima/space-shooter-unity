@@ -25404,7 +25404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667418496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.64, y: 1.92, z: -0.057791207}
+  m_LocalPosition: {x: 15.64, y: 0.47, z: -0.057791207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27488,6 +27488,7 @@ MonoBehaviour:
   player: {fileID: 0}
   spawnPoint: {fileID: 0}
   CurrentSpawnPointOfThePlayer: 1
+  delayScene: 2
 --- !u!1 &1068333388
 GameObject:
   m_ObjectHideFlags: 0
@@ -27813,9 +27814,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTypes:
-  - enemyPrefab: {fileID: 5326181764154008397, guid: 176676b5cb922a64da52d256d13ceb3b, type: 3}
-    enemyCount: 4
-    maxEnemiesPerWave: 4
+  - enemyPrefab: {fileID: 5282225535728693692, guid: 9e40d507f2fefb3418a6d271e3cd2f95, type: 3}
+    enemyCount: 1
+    maxEnemiesPerWave: 1
   spawnPoints:
   - {fileID: 164715371}
   - {fileID: 1638398241}

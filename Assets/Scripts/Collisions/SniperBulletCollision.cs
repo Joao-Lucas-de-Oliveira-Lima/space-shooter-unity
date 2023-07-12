@@ -22,6 +22,7 @@ public class SniperBulletCollision : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
         {
+            Instantiate(Resources.Load("Effects/SniperBulletImpactExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

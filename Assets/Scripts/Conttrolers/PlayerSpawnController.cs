@@ -2,16 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpawnController : MonoBehaviour
 {
     public GameObject player, spawnPoint;
     public int CurrentSpawnPointOfThePlayer = 1;
     // Start is called before the first frame update
-    void Start()
+
+    public int delayScene = 2;
+
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        if(player == null)
+        if (player == null)
         {
             spawnPoint = VerifySpawnPoint();
             player = Instantiate(Resources.Load("Ships/Player") as GameObject, this.spawnPoint.transform.position, this.spawnPoint.transform.rotation);
@@ -22,10 +26,20 @@ public class PlayerSpawnController : MonoBehaviour
             //GameObject.FindGameObjectWithTag("MainCamera").AddComponent<FollowThePlayer>();
         }
     }
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(player == null)
+        {
+            StartCoroutine(ChangeSceneWithDelay(delayScene));
+        }
+        /*
         player = GameObject.FindGameObjectWithTag("Player");
         this.CurrentSpawnPointOfThePlayer = GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom;
         if (player == null)
@@ -37,6 +51,13 @@ public class PlayerSpawnController : MonoBehaviour
             //Destroy(GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowThePlayer>());
             //FindGameObjectWithTag("MainCamera").AddComponent<FollowThePlayer>();
         }
+        */
+    }
+
+    IEnumerator ChangeSceneWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("GameOver"); // Substitua "NomeDaCena" pelo nome da cena que você deseja carregar
     }
 
     public GameObject VerifySpawnPoint()

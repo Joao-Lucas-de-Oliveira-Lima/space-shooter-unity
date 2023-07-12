@@ -144,7 +144,6 @@ public class Perseguidor : MonoBehaviour, Enemy
             this.life = 0;
             
                 Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
-                collision.gameObject.GetComponent<PlayerStateController>().takeDamage(300);
                 AudioController.PlaySound("Explosion");
                 
                 int currentRoom = GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom;

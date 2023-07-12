@@ -24,6 +24,7 @@ public class Sniper : MonoBehaviour, Enemy
 
 
     //Enemy life
+    public float maxLife = 100;
     public float life = 100;
 
 
@@ -64,7 +65,14 @@ public class Sniper : MonoBehaviour, Enemy
             if (Time.time > nextFire && VerifyDistance() && VerifyAttackRadius())
             {
                 nextFire = Time.time + fireRate;
-                primaryWeapon.Shoot();
+                try
+                {
+                    primaryWeapon.Shoot();
+                }catch(System.Exception e)
+                {
+
+                }
+                
             }
         }
     }
@@ -89,6 +97,43 @@ public class Sniper : MonoBehaviour, Enemy
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            this.life = this.life - (maxLife/2);
+
+            //Instantiate(Resources.Load("Effects/ExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+            //AudioController.PlaySound("Explosion");
+            if(life <= 0)
+            {
+                int currentRoom = GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom;
+                if (currentRoom == 1)
+                {
+                    GameObject.FindGameObjectWithTag("FirstRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 2)
+                {
+                    GameObject.FindGameObjectWithTag("SecondRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 3)
+                {
+                    GameObject.FindGameObjectWithTag("ThirdRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 4)
+                {
+                    GameObject.FindGameObjectWithTag("FourthRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+                else if (currentRoom == 5)
+                {
+                    GameObject.FindGameObjectWithTag("FifthRoom").GetComponent<RoomController>().EnemyDefeated();
+                }
+
+                Destroy(this.gameObject);
+            }
+            
+        }
+    }
 
     //Colisões
     private void OnTriggerEnter2D(Collider2D collision)

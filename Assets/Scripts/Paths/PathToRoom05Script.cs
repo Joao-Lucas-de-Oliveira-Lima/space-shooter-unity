@@ -23,11 +23,14 @@ public class PathToRoom05Script : MonoBehaviour
 
         try
         {
-            GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().ToggleTilemap(true);
-            GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().room = GameObject.FindGameObjectWithTag("FifthRoom");
-            GameObject.FindGameObjectWithTag("FifthRoom").GetComponent<RoomController>().startWave = true;
-            GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom = 5;
-            Destroy(this.gameObject);
+            if(collision.gameObject.CompareTag("Player"))
+            {
+                GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().ToggleTilemap(true);
+                GameObject.FindGameObjectWithTag("Door").GetComponent<DoorController>().room = GameObject.FindGameObjectWithTag("FifthRoom");
+                GameObject.FindGameObjectWithTag("FifthRoom").GetComponent<RoomController>().startWave = true;
+                GameObject.FindGameObjectWithTag("CurrentRoom").GetComponent<CurrentRoomScript>().currentRoom = 5;
+                Destroy(this.gameObject);
+            }
         }
         catch (System.Exception e)
         {
