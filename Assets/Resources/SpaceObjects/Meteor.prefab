@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1330422467412377076}
   - component: {fileID: 9195420647298999602}
   - component: {fileID: 853202323425510769}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Meteor
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 5
+  life: 10
 --- !u!58 &853202323425510769
 CircleCollider2D:
   m_ObjectHideFlags: 0
