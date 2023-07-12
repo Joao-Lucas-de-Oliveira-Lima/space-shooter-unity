@@ -33,8 +33,12 @@ namespace Assets.Scripts.Conttrolers
             }
             if(Input.GetKey(KeyCode.Mouse1) && Time.time > nextScondaryWeaponFire)
             {
+                PlayerStateController playerStateController = GetComponent<PlayerStateController>();
+                if(playerStateController.Energy < 100){ return ;}
+
                 nextScondaryWeaponFire = Time.time + secondaryWeaponFireRate;
                 secondaryWeapon.Shoot();
+                playerStateController.useEnergy(100);
             }
 
             //Movimentation
