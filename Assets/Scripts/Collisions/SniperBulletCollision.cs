@@ -17,6 +17,7 @@ public class SniperBulletCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(Resources.Load("Effects/SniperBulletImpactExplosionAnimation") as GameObject, this.transform.position, Quaternion.identity);
+            collision.gameObject.GetComponent<PlayerStateController>().takeDamage(this.GetComponent<WeaponDamageController>().playerDamage);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Door"))
