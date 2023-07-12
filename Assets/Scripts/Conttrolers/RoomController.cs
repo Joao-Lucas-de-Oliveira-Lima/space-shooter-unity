@@ -78,7 +78,10 @@ public class RoomController : MonoBehaviour
 
     public void EnemyDefeated()
     {
-        remainingEnemies--; // Decrementa o contador de inimigos remanescentes
+        if(remainingEnemies > 0)
+        {
+            remainingEnemies--;
+        } // Decrementa o contador de inimigos remanescentes
 
         if (remainingEnemies == 0 && currentWave >= waveCount)
         {

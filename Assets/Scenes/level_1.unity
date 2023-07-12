@@ -326,6 +326,9 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 5326181764154008397, guid: 176676b5cb922a64da52d256d13ceb3b, type: 3}
     enemyCount: 1
     maxEnemiesPerWave: 1
+  - enemyPrefab: {fileID: 8133979800088811558, guid: c1ce85cb2cf067b4b854b8b5bdf72757, type: 3}
+    enemyCount: 1
+    maxEnemiesPerWave: 1
   spawnPoints:
   - {fileID: 2143781876}
   waveCount: 3
@@ -27811,14 +27814,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypes:
   - enemyPrefab: {fileID: 5326181764154008397, guid: 176676b5cb922a64da52d256d13ceb3b, type: 3}
-    enemyCount: 1
-    maxEnemiesPerWave: 1
-  - enemyPrefab: {fileID: 8133979800088811558, guid: c1ce85cb2cf067b4b854b8b5bdf72757, type: 3}
-    enemyCount: 1
-    maxEnemiesPerWave: 1
-  - enemyPrefab: {fileID: 8491558635723015826, guid: c1829a8091330f547b7de3d13c4c6725, type: 3}
-    enemyCount: 1
-    maxEnemiesPerWave: 1
+    enemyCount: 4
+    maxEnemiesPerWave: 4
   spawnPoints:
   - {fileID: 164715371}
   - {fileID: 1638398241}
@@ -28138,7 +28135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392004022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.78, y: 26.18, z: 0}
+  m_LocalPosition: {x: 38.78, y: 26.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

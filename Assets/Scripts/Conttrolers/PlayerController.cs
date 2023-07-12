@@ -52,7 +52,7 @@ namespace Assets.Scripts.Conttrolers
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), speed * Time.fixedDeltaTime);
         }
 
-
+        /*
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Enemy"))
@@ -60,12 +60,13 @@ namespace Assets.Scripts.Conttrolers
                 Debug.Log("Colidiu com a nave inimiga");
             }
         }
-
+        
         private void OnCollisionEnter2D(Collision2D collision)
         {
             ManagerCollision(collision);
         }
 
+        
         private void ManagerCollision(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Enemy"))
@@ -79,6 +80,7 @@ namespace Assets.Scripts.Conttrolers
                 
             }
         }
+        */
 
     }
 
