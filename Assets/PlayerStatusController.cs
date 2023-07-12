@@ -8,18 +8,25 @@ public class PlayerStateController : MonoBehaviour
 {
     
     public BarsController barsControllers;
+
     public int maxLife = 400;
     public int maxEnergy = 400;
-    public int maxShield = 400;
-    public float recoverTime = 5f;
-    public float recoverDelay = 1f;
-    public int shieldIncreasePerDelay = 20;
+    public int maxShield = 500;
+
+    public float shieldRecoverTime = 5f;
+    public float shieldRecoverDelay = 1f;
+    public int shieldRecoverAmount = 20;
+
+    public float energyRecoverDelay = 8f;
+    public int energyRecoverAmount = 100;
 
     private int life;
     private int energy;
     private int shield;
-    private float recoverTimer;
-    private float delayTimer;
+
+    private float shieldRecoverTimer;
+    private float shieldDelayTimer;
+    private float energyDelayTimer;
 
     public float delayScene = 1.0f;
     public bool defeatedPlayer = false;
@@ -66,8 +73,9 @@ public class PlayerStateController : MonoBehaviour
         life = maxLife;
         energy = maxEnergy;
         shield = maxShield;
-        recoverTimer = recoverTime;
-        delayTimer = recoverDelay;
+        shieldRecoverTimer = shieldRecoverTime;
+        shieldDelayTimer = shieldRecoverDelay;
+        energyDelayTimer = energyRecoverDelay;
         
         barsControllers.setMaxLifeValue(maxLife);
         barsControllers.setMaxEnergyValue(maxEnergy);
@@ -80,11 +88,12 @@ public class PlayerStateController : MonoBehaviour
 
     private void Update()
     {
-        // Lógica de recuperação do escudo
-        RecoverUpdate(Time.deltaTime);
+        // Lógica de recuperação do escudo e energia
+        shieldRecoverUpdate(Time.deltaTime);
+        EnergyRecoverUpdate(Time.deltaTime);
     }
 
-    private void RecoverUpdate(float deltaTime)
+    private void shieldRecoverUpdate(float deltaTime)
     {
         if (Shield >= maxShield)
         {
@@ -92,16 +101,16 @@ public class PlayerStateController : MonoBehaviour
             return;
         }
 
-        recoverTimer -= deltaTime;
+        shieldRecoverTimer -= deltaTime;
 
-        if (recoverTimer <= 0f)
+        if (shieldRecoverTimer <= 0f)
         {
-            delayTimer -= deltaTime;
+            shieldDelayTimer -= deltaTime;
 
-            if (delayTimer <= 0f)
+            if (shieldDelayTimer <= 0f)
             {
-                Shield += shieldIncreasePerDelay;
-                delayTimer = recoverDelay;
+                Shield += shieldRecoverAmount;
+                shieldDelayTimer = shieldRecoverDelay;
             }
         }
 
@@ -139,7 +148,33 @@ public class PlayerStateController : MonoBehaviour
         updateLifeUI();
 
         // Reinicia o timer de recuperação ao receber dano
-        recoverTimer = recoverTime;
+        shieldRecoverTimer = shieldRecoverTime;
+    }
+
+     public void useEnergy(int valor){
+        if(valor > energy){ return ;}
+        Energy -= valor;
+        updateEnergyUI();
+    }
+
+    private void EnergyRecoverUpdate(float deltaTime)
+    {
+        if (Energy >= maxEnergy)
+        {
+            // Se a energia já está no máximo, interrompe a função
+            return;
+        }
+
+        energyDelayTimer -= deltaTime;
+
+        if (energyDelayTimer <= 0f)
+        {
+            Energy += energyRecoverAmount;
+            energyDelayTimer = energyRecoverDelay;
+        }
+         // Garante que a energia não ultrapasse o valor máximo
+        Energy = (Energy > maxEnergy) ? maxEnergy : Energy;
+        updateEnergyUI();
     }
     
 }
