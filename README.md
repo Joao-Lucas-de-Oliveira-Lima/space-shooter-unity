@@ -65,15 +65,15 @@ Face a variety of enemy spaceships, each with unique movement patterns and attac
 
 #### Life Bar
 
-![Heart symbol](/Assets/Sprites/PlayerUI/hearth.png) ![Player life bar](/Assets/Sprites/PlayerUI/life_texture.png)
+![Symbol of a red heart](/Assets/Sprites/PlayerUI/hearth.png) ![Player life bar](/Assets/Sprites/PlayerUI/life_texture.png)
 Starts full and decreases when hit by enemy fire or upon collision with obstacles.
 
 #### Shield Bar
-![Symbol of a shield](/Assets/Sprites/PlayerUI/energy.png) ![Player Shield Bar](/Assets/Sprites//PlayerUI/energy-bar.png)
+![Symbol of a yellow sun](/Assets/Sprites/PlayerUI/shild%20(1).png) ![Special attack bar](/Assets/Sprites/PlayerUI/shield-bar%20(1).png)
 Regenerates over time and absorbs most laser weapon damage. However, it offers limited protection against collisions with ships or meteors.
 
 #### Special Attack Bar
-![Sun symbol](/Assets/Sprites/PlayerUI/shild%20(1).png) ![Special attack bar](/Assets/Sprites/PlayerUI/shield-bar%20(1).png)
+![Symbol of a blue diamond](/Assets/Sprites/PlayerUI/energy.png) ![Player Shield Bar](/Assets/Sprites//PlayerUI/energy-bar.png)
 This bar charges over time and allows the player to fire powerful missiles, capable of eliminating most enemies with a single shot.
 
 ---
