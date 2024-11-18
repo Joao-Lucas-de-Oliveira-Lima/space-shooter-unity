@@ -23,10 +23,10 @@ In the year 2223, the player's world is under attack by strange alien creatures.
 As a member of the newly formed **Global Alliance** (name TBD), players join the resistance in a quest to stop the invasion. With the first generation of combat-ready spacecraft, their mission is to infiltrate the enemy fleet and destroy the mothership located in the [Sector TBD].
 
 ### Gameplay
-- First Level:
+#### First Level:
 
 ![Killiam3 fighting enemies and dodging meteors](/images/first_level.gif)
-- Last Level:
+#### Last Level:
 
 ![Killiam3 battling the boss Sniper and avoiding cannon shots](/images/last_level.gif)
 
