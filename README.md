@@ -56,7 +56,7 @@ As a member of the newly formed **Global Alliance** (name TBD), players join the
 </div>
 
 #### Enemies
-- Face a variety of enemy spaceships, each with unique movement patterns and attacks:
+Face a variety of enemy spaceships, each with unique movement patterns and attacks:
 
 |Pursuer |Scout|Cannon|Meteor|Sniper|
 |:---:|:---:|:---:|:---:|:---:|
