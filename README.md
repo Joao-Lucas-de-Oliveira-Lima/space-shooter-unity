@@ -1,148 +1,90 @@
-# spaceShooter
+# Space Shooter: Killiam3 Rebellion
+This project was developed as a final assignment for the **Introduction to Game Development** course. The goal was to gain hands-on experience in game development using Unity, including working with its physics system, creating C# scripts, and integrating third-party assets to enhance the game's aesthetics and functionality.
 
+## Prerequisites
+- [Unity Editor 2022.2.10f1](https://unity.com/releases/editor/archive)
 
-###
-GDD
-###
+---
 
-Documento de Game Design  
+## Game Design Document (GDD)
 
-My Space Shooter Fight 
+### Authors
+- Arlle Bruno Brasil Maciel  
+- Adauto Lino Neto  
+- João Lucas de Oliveira Lima  
 
-Arlle Bruno Brasil Maciel, Adauto Lino Neto e João Lucas de Oliveira Lima 
+### Introduction
+*Killiam3 Rebellion* is a top-down space shooter where players take on the role of a space soldier aboard the spaceship **Killiam3**. Armed with a powerful arsenal, the player will face waves of alien invaders in various arenas. The ultimate goal is to protect their world and its inhabitants from annihilation.
 
-08/05/2023 
 
-INTRODUÇÃO  
+### Story
+In the year 2223, the player's world is under attack by strange alien creatures. Despite humanity's attempts to communicate, the invaders seek domination by exploiting natural resources and enslaving the population through genetic experiments.
 
-O jogo é um space shooter de visão de câmera top-down, onde o jogador interpreta um soldado espacial que luta numa rebelião na nave Killiam3 e conta com um diverso arsenal para derrotar a horda de aliens invasora em diferentes arenas de combate espacial. Você  será o responsável por impedir o avanço da invasão alienígena e proteger os habitantes de seu amado mundo. 
+As a member of the newly formed **Global Alliance** (name TBD), players join the resistance in a quest to stop the invasion. With the first generation of combat-ready spacecraft, their mission is to infiltrate the enemy fleet and destroy the mothership located in the [Sector TBD].
 
-HISTÓRIA  
+### Gameplay
+![Killiam3 fighting enemies and dodging meteors](/images/first_level.gif)
+![Killiam3 battling the boss Sniper and avoiding cannon shots](/images/last_level.gif)
 
-No ano 2223 o {mundo} em que o player vive,  é atacado por criaturas estranhas. As tentativas de comunicação com o que passou a ser considerado como invasores, foram todas em vão. Os invasores vieram com o intuito de dominar o {mundo}, controlando tanto seus recursos naturais, quanto escravizando a população por meio de experiências genéticas. Agora o player como membro da recém formada aliança global {nome a definir}, uma coligação das nações remanescentes ainda com resquícios de sua independência, compartilhando suas melhores mentes e segredos tecnológicos, criaram a primeira geração de naves verdadeiramente espaciais, com o seu design feito para o combate. O objetivo da resistência é de passar pela horda inimiga até o setor {nome a definir}, onde encontra-se a nave mãe, para então sabotá-la e destruí-la, dando fim a invasão. 
+---
 
-{} 
+### Controls
 
-CONTROLES  
+| **Control**                | **Action**                  |
+|----------------------------|-----------------------------|
+| `A`, `Arrow Left`          | Move left              |
+| `D`, `Arrow Right`         | Move right             |
+| `W`, `Arrow Up`            | Move up |
+| `S`, `Arrow Down`          | Move down|
+| Mouse position             | Rotate the ship                        |
+| Left mouse button          | Fire laser gun        |
+| Right mouse button         | Launch missiles         |
+---
 
- 
+### Gameplay Elements
 
-CONTROLE  
+#### Player Ship
+<div style="display: flex; align-items: center;">
+  <img src="/Assets//Sprites/Ships/playerShipModule2.png" style="padding:30px" alt="Killiam3, Yellow spaceship resembling a fighter jet">
+  <p>A small, fast, and highly responsive ship with precise linear and angular movements. Equipped with two types of attacks: a standard laser gun and a powerful missile launcher capable of destroying most enemies in one shot.
 
-DESCRIÇÃO 
+</p>
+</div>
 
-A, Arrow-Left  
+#### Enemies
+- Face a variety of enemy spaceships, each with unique movement patterns and attacks:
 
-Corre/vira para a esquerda 
+|Pursuer |Scout|Cannon|Meteor|Sniper|
+|:---:|:---:|:---:|:---:|:---:|
+|<img src="/Assets/Sprites/Ships/Cruiser_57x49.png" width=80px alt="Pursuer Spaceship">|<img src="/Assets/Sprites/Ships/IonCannon_A_Photon_119x119.png" width=80px alt="Scout Spaceship">|<img src="/Assets/Sprites/Cannons/CoreDefender_A_209x182.png" width=80px, alt="Space cannon">|<img src="/Assets/Sprites/SpaceObjects/Stones2Filled_09.png" width=80px, alt="Meteor">|<img src="/Assets/Sprites/Ships/Sniper.png" width=80px alt="Sniper spaceship">|
 
-D, Arrow-Right 
 
-Corre/vira para a direita 
+#### Life Bar
+![Heart symbol](/Assets/Sprites/PlayerUI/hearth.png) ![Player life bar](/Assets/Sprites/PlayerUI/life_texture.png)
+Starts full and decreases when hit by enemy fire or upon collision with obstacles.
 
-W, Arrow-Up 
+#### Shield Bar
+![Symbol of a shield](/Assets/Sprites/PlayerUI/energy.png) ![Player Shield Bar](/Assets/Sprites//PlayerUI/energy-bar.png)
+Regenerates over time and absorbs most laser weapon damage. However, it offers limited protection against collisions with ships or meteors.
 
-Subir ( em obstáculos específicos) 
+#### Special Attack Bar
+![Sun symbol](/Assets/Sprites/PlayerUI/shild%20(1).png) ![Special attack bar](/Assets/Sprites/PlayerUI/shield-bar%20(1).png)
+This bar charges over time and allows the player to fire powerful missiles, capable of eliminating most enemies with a single shot.
 
-S, Arrow-Down 
+---
 
-Descer (em obstáculos específicos) 
+### Objective
+Eliminate waves of enemies and defeat the boss across five different areas. To unlock each new area, all enemies in the current level must be defeated.
 
-Posição do mouse 
+---
 
-Mira do personagem 
+### Features to Implement
 
-Botão esquerdo do mouse 
-
-Atirar 
-
- 
-
- 
-
-ELEMENTOS DO JOGO  
-
-Obstáculos   
-
-Cada arena conterá obstáculos como rochas, meteoritos ou lixo espacial, para que o jogador possa utilizar como proteção, de modo que tais obstáculos obstruem tanto os disparos inimigos quanto os disparos do jogador, adicionando mais uma camada de jogabilidade para a mecânica do jogo. 
-
-Os obstáculos variam entre aqueles que podem ser destruídos ou removidos e aqueles que persistem, ou seja, que são fixos no cenário. 
-
-Poções de vida  
-
-Durante a batalha com os inimigos, o jogador pode ganhar itens que podem reparar a vitalidade; 
-
-Inimigos  
-
-Os inimigos serão hordas de espaçonaves extraterrestres, variando entre diversos tipos, cada um com movimentação e ataque próprio. Ao final da fase, o jogador deve enfrentar um inimigo mais poderoso do que os demais (o “chefão”). 
-
-Quando um inimigo é derrotado, este pode “dropar” itens como life, mísseis, upgrade ou simplesmente nada, a  depender da sorte. 
-
- 
-
-Barra de life  
-
- 
-
-O jogador começa sua missão com uma barra de vida cheia que pode ser reduzida conforme ele é atingido pelos ataques de seus inimigos. Por sua vez, o jogador também poderá restaurar a sua barra de vida utilizando os kits de reparo que são “dropados” durante a fase. 
-
-Cronômetro  
-
-O jogo não terá limite de tempo.  
-
-SISTEMA DE PONTUAÇÃO  
-
-<descrição de como ganhar e perder pontos e/ou vida + como avança de  fase>  
-
-O jogo não possuirá contagem de pontos, sendo que o jogador deve focar apenas em avançar para o próximo estágio. 
-
- 
-
-AÇÕES DO JOGO  
-
-Movimentar a nave 
-
-O jogador pode se deslocar pelo cenário em 8 direções diferentes através das teclas AWSD ou SETAS.   
-
-Atirar 
-
-Botão esquerdo do mouse para os disparos normais, e botão direito do mouse para lançar mísseis. 
-
- 
-
-Coletar itens  
-
-O jogador pode coletar itens que recuperam sua “vida” para coletar os itens  basta entrar em contato com eles. Também tem itens de upgrade e mísseis que são disparos mais poderosos. 
-
-DIFICULDADE  
-
-A dificuldade do jogo é marcada pela quantidade de quites médicos distribuídos pelo cenário, pela velocidade com que a barra de adrenalina é preenchida  /zerada e pelo tempo disponível para chegar aos checkpoints. Quanto menor o  numero de quites médicos, maior a velocidade da barra de adrenalina e menor o  tempo para chegar ao checkpoint , mais difícil se torna o jogo.   
-
-A dificuldade do jogo é marcada por inimigos um pouco mais rápidos, armas inimigas que dão mais danos, inimigos mais resistentes, menor probabilidade de drops de itens especiais, obstáculos que podem atrapalhar o jogador. 
-
- 
-
-MODO DE CONTAR A HISTÓRIA  
-
-História contada através imagens estáticas com legendas.   
-
-FASES  
-
- 
-
-Cutscene 1 
-
-A cutscene 1 apresenta um resumo da história do jogo, conforme descrita no tópico HISTÓRIA deste GDD. 
-
- 
-
-Fase 1  
-
-Definição do objetivo: destruir as hordas de inimigos menores e destruir o “chefão”. 
-
-Como ganha e como perde: o jogador vence o jogo após destruir os inimigos e o chefe da fase. Perde quando sua barra de vida chega a zero. 
-
-Personagens: a nave do jogador, os inimigos comuns (que são variados) e o chefe.  
-
-Cutscene 2  
-
-É apresentada uma imagem do desfecho do combate, demonstrando a vitória da humanidade, além do seguinte texto: a humanidade vence a primeira investida, e agora está reunida e sempre se preparando para possíveis novas ameaças alienígenas, sempre buscando melhorar seu nível tecnológico. E agora vive um período de paz… por enquanto. 
+- [ ] **Health Kits:** Restore vitality during battles.
+- [ ] **Upgrades:** Improve weapon performance and ship attributes.
+- [ ] **Dropped Items:** Defeated enemies may drop random items such as health kits, missiles, upgrades, or nothing at all.
+- [ ] **Boss Battles:** Intense battles at the end of each level.
+- [ ] **New Levels:** Add more levels with different enemy types and unique challenges.
+- [ ] **Cutscenes:** Incorporate cutscenes to narrate the game's story and increase immersion.
+- [ ] **Score System:** Implement a score system to record player performance.
+- [ ] **NPCs:** Introduce NPCs to deepen the narrative and create a more engaging experience.
