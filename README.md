@@ -25,7 +25,7 @@
 
 ---
 
-### 💾 Story
+### 📖 Story
 
 In the year 2223, the player's planet is under attack by strange alien creatures. After failed attempts to communicate, it is discovered that the invaders seek to exploit natural resources and enslave the population through genetic experiments.
 
