@@ -1,5 +1,7 @@
 # 🚀 Space Shooter: *Killiam3 Rebellion*
 
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white)
+
 **Killiam3 Rebellion** is a top-down space shooter game developed as a final project for the **Introduction to Game Development** course. The goal was to gain hands-on experience with Unity, exploring the physics system, creating C# scripts, and integrating third-party assets to enhance the aesthetics and functionality of the game.
 
 ---
@@ -34,10 +36,6 @@ As a member of the **Global Alliance**, the player must pilot the first generati
 ---
 
 ## 🎮 Gameplay
-
-![Killiam3 fighting enemies and dodging meteors](/images/first_level.gif)
-
----
 
 ![Killiam3 battling the boss Sniper and avoiding cannon shots](/images/last_level.gif)
 
